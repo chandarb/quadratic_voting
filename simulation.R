@@ -1,18 +1,3 @@
-rm(list=ls())
-
-library(PearsonDS)
-library(rootSolve)
-library(rjson)
-library(rmutil)
-library(fBasics)
-library(stabledist)
-library(MASS)
-source("dc_funcs.R")
-source("welf_calc.R")
-source("initialize.R")
-source("auxilliary.R")
-source("no_dc.R")
-set.seed(1234567)
 
 # Run the simulation.
 # K is the fineness of the grid, S_size is the number of rows in sampled utility matrix,
@@ -635,44 +620,3 @@ main.prog = function(distribution, para1 = NULL, para2 = NULL,
               QEW=QEW, MEW=MEW, Limiting=Limiting_i, dct=dct))
 }
 
-
-######### run the simulation and gather results ###########
-input = fromJSON(file="QV_input.json")
-
-QVI = 0
-MVI = 0
-LI = 0
-
-N = input$N
-param1 = input$param1
-param2 = input$param2
-range=c(input$interval1, input$interval2)
-k=input$k
-limiting=input$limiting
-with_dc=input$with_dc
-distribution = input$distribution
-tolerance = input$tolerance
-print(N)
-
-vall = main.prog(distribution, para1=param1, para2=param2, range=range, N=N, k=k,
-          limiting=limiting, with_dc=with_dc, tolerance=tolerance)
-
-QVI = 1 - vall$QEW
-MVI = 1 - vall$MEW
-LI = vall$Limiting
-
-# create CSV with welfare results
-
-w_mat = matrix(0, ncol = 7, nrow = iterations)
-colnames(w_mat) = c("distribution", "N", "param1", "param2", "QVI",
-                    "MVI", "Limiting")
-w_mat[,1] = distribution
-w_mat[,2] = N
-w_mat[,3] = param1
-w_mat[,4] = param2
-w_mat[,5] = QVI
-w_mat[,6] = MVI
-w_mat[,7] = LI
-
-# filename = paste0("data/DPLNu_seed/",distribution,"N",N,"a",param1,"b",param2,".csv")
-# write.csv(w_mat, filename)
