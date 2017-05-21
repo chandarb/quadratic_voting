@@ -1,0 +1,19 @@
+{
+	"distribution":"Normal",
+	"iterations":1,
+	"param1":0.5,
+	"param2":1,
+	"N":100,
+	"interval1":"",
+	"interval2":"",
+	"k":0.05,
+	"limiting":true,
+	"with_dc":false,
+	"tolerance":0.00005
+
+
+
+
+
+
+}
