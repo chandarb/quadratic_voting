@@ -1,6 +1,5 @@
 rm(list=ls())
 
-setwd("/Users/bharatchandar/Documents/QV/")
 library(PearsonDS)
 library(rootSolve)
 library(rjson)
