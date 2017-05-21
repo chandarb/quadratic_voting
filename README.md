@@ -14,3 +14,5 @@ dc_funcs.R: Functions relevant to cases when there's a discontinuity in the voti
 
 no_dc.R: Functions relevant to cases when there's no discontinuity in the voting function.
 
+QV_input.json: JSON file that can be used to input the parameter settings.
+
