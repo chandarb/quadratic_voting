@@ -2,7 +2,9 @@
 
 Numerical Simulation of Quadratic Voting 
 
-simulation.R: Code to execute the simulation for inputted parameters.
+run_simulation.R: Take in the inputed parameters and run the simulation.
+
+simulation.R: Code for the simulation.
 
 auxilliary.R: Auxilliary functions. Root solver, utility function and first order condition for QV, utility to vote interpolator.
 
