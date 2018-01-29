@@ -53,7 +53,7 @@ LI = vall$Limiting
 
 # create CSV with welfare results
 
-w_mat = matrix(0, ncol = 7, nrow = iterations)
+w_mat = matrix(0, ncol = 7, nrow = 1)
 colnames(w_mat) = c("distribution", "N", "param1", "param2", "QVI",
                     "MVI", "Limiting")
 w_mat[,1] = distribution
